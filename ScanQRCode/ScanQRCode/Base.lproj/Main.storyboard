@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z7S-Dr-4A9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="s4i-hS-zqp">
+            <objects>
+                <tableViewController id="Tsm-xf-FYp" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WYf-bN-aPJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="fyE-pJ-h2f">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="xSa-EG-He2" style="IBUITableViewCellStyleDefault" id="gMq-mf-xCF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMq-mf-xCF" id="32l-ss-Dje">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="扫描二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSa-EG-He2">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="S33-JG-Kqq" kind="show" id="N5D-51-6rR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="har-9J-qBZ" style="IBUITableViewCellStyleDefault" id="z5x-T9-o1B">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z5x-T9-o1B" id="9eR-dJ-1i7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="生成二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="har-9J-qBZ">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NVr-bw-NrE" kind="show" id="4x6-uk-nV1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Tsm-xf-FYp" id="rvv-iy-fo0"/>
+                            <outlet property="delegate" destination="Tsm-xf-FYp" id="hMO-C6-FFB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="8lu-5j-5Ok"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlN-7z-rNp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3029.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--扫描二维码-->
+        <scene sceneID="UEp-gh-7Ee">
+            <objects>
+                <viewController title="扫描二维码" id="S33-JG-Kqq" customClass="ScanViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tm3-vd-Rc0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y0Z-cu-bhr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZvB-DI-fmQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="0CH-s5-EX9" kind="show" identifier="ScanResult" id="rDy-Td-JZR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zmu-kf-b7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3822" y="-39"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cDo-OU-QWT">
+            <objects>
+                <viewController id="NVr-bw-NrE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8P7-jP-w2o"/>
+                        <viewControllerLayoutGuide type="bottom" id="vXI-8h-uoF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="86F-XK-BwF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oij-oh-lZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3822" y="650"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ufj-V0-uGD">
+            <objects>
+                <viewController id="XoR-Ud-cK9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Sr-4n-yke"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qd7-vV-wMz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mbn-Mx-PSF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaS-6d-v0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4551" y="650"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CNv-Ym-3FV">
+            <objects>
+                <navigationController id="z7S-Dr-4A9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3C-XP-aH5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Tsm-xf-FYp" kind="relationship" relationship="rootViewController" id="jAX-Nd-kpt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIB-34-H7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2079" y="139"/>
+        </scene>
+        <!--扫描结果-->
+        <scene sceneID="aRd-Ze-vX1">
+            <objects>
+                <viewController title="扫描结果" id="0CH-s5-EX9" customClass="ScanResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m26-pF-de4"/>
+                        <viewControllerLayoutGuide type="bottom" id="xwA-Ad-wBh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xjr-he-Vp1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xS0-nX-XhG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xwA-Ad-wBh" firstAttribute="top" secondItem="xS0-nX-XhG" secondAttribute="bottom" id="F04-Yh-JNC"/>
+                            <constraint firstItem="xS0-nX-XhG" firstAttribute="top" secondItem="m26-pF-de4" secondAttribute="bottom" id="VQ7-if-7EM"/>
+                            <constraint firstItem="xS0-nX-XhG" firstAttribute="leading" secondItem="xjr-he-Vp1" secondAttribute="leading" id="e79-Bl-O1h"/>
+                            <constraint firstAttribute="trailing" secondItem="xS0-nX-XhG" secondAttribute="trailing" id="uKv-Wx-vbl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="xS0-nX-XhG" id="SgN-Wh-122"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0fe-QH-ciZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4520.8000000000002" y="-39.130434782608695"/>
+        </scene>
+    </scenes>
+</document>
