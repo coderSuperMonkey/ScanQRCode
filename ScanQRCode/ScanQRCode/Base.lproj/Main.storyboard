@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z7S-Dr-4A9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z7S-Dr-4A9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +24,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gMq-mf-xCF" id="32l-ss-Dje">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="扫描二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xSa-EG-He2">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -44,11 +44,11 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z5x-T9-o1B" id="9eR-dJ-1i7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="生成二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="har-9J-qBZ">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -95,10 +95,10 @@
             </objects>
             <point key="canvasLocation" x="3822" y="-39"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="cDo-OU-QWT">
             <objects>
-                <viewController id="NVr-bw-NrE" sceneMemberID="viewController">
+                <viewController id="NVr-bw-NrE" customClass="EditViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8P7-jP-w2o"/>
                         <viewControllerLayoutGuide type="bottom" id="vXI-8h-uoF"/>
@@ -106,17 +106,46 @@
                     <view key="view" contentMode="scaleToFill" id="86F-XK-BwF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入一段字符" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGG-Ma-5UZ">
+                                <rect key="frame" x="20" y="114" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2Oe-FM-aJ5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ew0-yh-8Mf">
+                                <rect key="frame" x="20" y="191" width="116" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87294435500000001" green="0.77004632390000005" blue="0.51545297560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="生成二维码"/>
+                                <connections>
+                                    <action selector="createQRCode:" destination="NVr-bw-NrE" eventType="touchUpInside" id="hqe-4p-MQ0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wGG-Ma-5UZ" secondAttribute="trailing" constant="20" id="2oc-XC-bxA"/>
+                            <constraint firstItem="wGG-Ma-5UZ" firstAttribute="top" secondItem="8P7-jP-w2o" secondAttribute="bottom" constant="50" id="D2i-G3-9dP"/>
+                            <constraint firstItem="wGG-Ma-5UZ" firstAttribute="leading" secondItem="86F-XK-BwF" secondAttribute="leading" constant="20" id="gCs-VI-2Tx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentTF" destination="wGG-Ma-5UZ" id="WQ8-TB-B7x"/>
+                        <segue destination="XoR-Ud-cK9" kind="show" identifier="Create" id="BMB-Y9-1Lc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oij-oh-lZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3822" y="650"/>
+            <point key="canvasLocation" x="3821.5999999999999" y="649.92503748125944"/>
         </scene>
-        <!--View Controller-->
+        <!--Code View Controller-->
         <scene sceneID="ufj-V0-uGD">
             <objects>
-                <viewController id="XoR-Ud-cK9" sceneMemberID="viewController">
+                <viewController id="XoR-Ud-cK9" customClass="QRCodeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Sr-4n-yke"/>
                         <viewControllerLayoutGuide type="bottom" id="Qd7-vV-wMz"/>
@@ -124,19 +153,33 @@
                     <view key="view" contentMode="scaleToFill" id="Mbn-Mx-PSF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0w-eJ-25v">
+                                <rect key="frame" x="27" y="89" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0F3-mn-RZb">
+                                <rect key="frame" x="27" y="279" width="160" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="codeImageView" destination="L0w-eJ-25v" id="yR1-xh-3XD"/>
+                        <outlet property="logoCodeImageView" destination="0F3-mn-RZb" id="eOw-dk-klc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaS-6d-v0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4551" y="650"/>
+            <point key="canvasLocation" x="4549.6000000000004" y="649.92503748125944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CNv-Ym-3FV">
             <objects>
                 <navigationController id="z7S-Dr-4A9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3C-XP-aH5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
